@@ -1,0 +1,34 @@
+// Algo program for insertion sort 
+
+// Function to sort an array using insertion sort
+
+PROCEDURE insertion_sort(VAR arr : ARRAY_OF INTEGER)
+
+VAR
+j , key, i : INTEGER ;
+ //j and i represent the two counters elements 
+ // j for the sorted part of the array and i for the unsorted part of the array
+ //key is used to represent the current element arr[i]
+BEGIN
+// transverse through the length of the array
+    
+FOR i FROM 0 TO arr.length -1 STEP 1  DO
+key = arr[i];
+     j = i-1
+END_FOR
+    
+        // Move elements of arr[0..i-1],
+        // that are greater than key, 
+        // to one position ahead of their
+        // current position
+        // they are moved to a sub-array (j) which is the sorted part of the array
+
+        
+         WHILE ( j >= 0 AND key < arr[j] ) DO
+            
+             arr[j + 1] = arr[j];
+                j = j - 1;
+            arr[j + 1] = key;
+         END_WHILE
+
+END
